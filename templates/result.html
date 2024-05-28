@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Data Repairer</h1>
+<div class="progress-bar-container">
+    <div class="progress-bar" style="width: {{ progress }}%;"></div>
+</div>
+
+<p>Selected Dataset: {{ dataset }}</p>
+<p>Selected Model: {{ model }}</p>
+<p>Test Size: {{ test_size }}</p>
+<p>Random State: {{ random_state }}</p>
+<p>Privileged Groups: {{ privileged_groups }}</p>
+
+
+<h3>Example Data Plot</h3>
+<img src="data:image/png;base64,{{ plot_url }}" alt="Example Data Plot">
+
+<div class="navigation">
+    <a class="nav-button" href="{{ url_for('parameter') }}">Back</a>
+</div>
+
+{% endblock %}

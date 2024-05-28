@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>What is Fairness?</h1>
+<p>Fairness in machine learning refers to the practice of ensuring that models make unbiased decisions, providing equal outcomes for different groups of people. This means avoiding discrimination based on attributes such as race, gender, age, or any other protected characteristics.</p>
+
+<h2>How Does Fairness Work?</h2>
+<p>Fairness in machine learning is achieved by identifying and mitigating biases in the data, the models, and the predictions. This involves:</p>
+<ul>
+    <li>Detecting biases in the training data</li>
+    <li>Using algorithms that can reduce or eliminate these biases</li>
+    <li>Evaluating the models using fairness metrics to ensure equitable outcomes</li>
+</ul>
+
+<h2>Fairness Tools</h2>
+<p>To help achieve fairness, several tools and techniques have been developed:</p>
+
+<h3>Datasets Implemented</h3>
+<ul>
+    <li>German Credit</li>
+    <li>Adult Census - To be soon</li>
+    <li>Taiwan Credit Default - To be soon</li>
+</ul>
+
+<h3>Fairness Methods Implemented</h3>
+<p>We have implemented various fairness methods, including:</p>
+<ul>
+    <li>Pre-processing: Adjusts data before model training to reduce bias by ensuring fair representation of protected attributes.</li>
+    <li>In-processing - To be soon: Modifies learning algorithms to incorporate fairness constraints directly during the model training process.</li>
+    <li>Post-processing - To be soon: Alters model predictions to improve fairness without changing the underlying model or training data.</li>
+</ul>
+
+<h3>Models Implemented</h3>
+<p>To explore the impact of fairness methods on model performance, we have implemented four different machine learning models:</p>
+<ul>
+    <li>Logistic Regression (LR)</li>
+    <li>Random Forest (RF)</li>
+    <li>Support Vector Machine (SVM)</li>
+    <li>Gradient Boosting Machines (GBM)</li>
+</ul>
+
+<h2>Architecture Overview</h2>
+<p>Fairlearn's architecture is designed to be modular and extensible, integrating multiple fairness tools for comprehensive bias assessment and mitigation.</p>
+
+<h2>Evaluation Criteria</h2>
+<p>To evaluate the fairness and performance of the models, we use the following metrics:</p>
+<ul>
+    <li>Balanced Accuracy: A metric that accounts for class imbalance by taking the average of recall (sensitivity) obtained on each class.</li>
+    <li>Theil Index: An economic measure of inequality that can be applied to predictions in machine learning to measure the disparity in predictive performance across different groups.</li>
+    <li>Average Odds Difference: Measures the difference in both true positive rates (TPR) and false positive rates (FPR) between the privileged and unprivileged groups.</li>
+    <li>Equal Opportunity Difference: Measures the difference in true positive rates (TPR) between the privileged and unprivileged groups.</li>
+    <li>Statistical Parity Difference: Measures the difference in positive outcome rates between the privileged and unprivileged groups.</li>
+    <li>Disparate Impact: Measures the ratio of positive outcome rates between the privileged and unprivileged groups.</li>
+    <li>AUC-ROC: The Area Under the Receiver Operating Characteristic Curve measures the model's ability to distinguish between positive and negative classes.</li>
+</ul>
+
+<div class="buttons">
+    <a class="button" href="{{ url_for('demo') }}">Start Demo</a>
+    <a class="button" href="https://github.com/ITU">Go to project page</a>
+</div>
+
+<h2>About Fairlearn</h2>
+<p>Developed by ITU, Fairlearn is an open-source toolkit designed to examine, report, and mitigate discrimination and bias in machine learning models. It leverages leading fairness tools, including AIF360, Themis-ML, and Aequitas, to perform comprehensive bias audits and fairness assessments. Fairlearn enables developers, analysts, and policymakers to make informed decisions by providing performance comparisons and mitigation strategies, ensuring equitable and unbiased AI applications. We invite you to use and contribute to the improvement of Fairlearn.</p>
+
+{% endblock %}

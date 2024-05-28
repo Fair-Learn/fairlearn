@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Select Model</h1>
+<div class="progress-bar-container">
+    <div class="progress-bar" style="width: {{ progress }}%;"></div>
+</div>
+
+<p>Selected Dataset: {{ dataset }}</p>
+<form method="POST" id="modelForm">
+    <div class="model-container">
+        <div class="model">
+            <input type="radio" id="logistic_regression" name="model" value="Logistic Regression">
+            <label for="logistic_regression">
+                <h3>Logistic Regression</h3>
+                <p>Logistic Regression predicts binary outcomes by modeling the relationship between input features and the probability of a particular outcome using a logistic function. It fits a linear decision boundary to separate classes.</p>
+            </label>
+        </div>
+        <div class="model">
+            <input type="radio" id="svm" name="model" value="Support Vector Machine">
+            <label for="svm">
+                <h3>Support Vector Machine</h3>
+                <p>SVM finds the optimal hyperplane that maximizes the margin between different classes in a high-dimensional space. It is effective for both linear and non-linear classification using kernel functions.</p>
+            </label>
+        </div>
+        <div class="model">
+            <input type="radio" id="random_forest" name="model" value="Random Forest">
+            <label for="random_forest">
+                <h3>Random Forest</h3>
+                <p>Random Forest constructs an ensemble of decision trees during training and combines their outputs to improve predictive accuracy. It reduces overfitting by averaging multiple trees and is robust to noisy data.</p>
+            </label>
+        </div>
+        <div class="model">
+            <input type="radio" id="gbm" name="model" value="Gradient Boosting Machines">
+            <label for="gbm">
+                <h3>Gradient Boosting Machines</h3>
+                <p>GBM builds models sequentially, where each new model corrects errors from the previous models by focusing on the hardest-to-predict cases. It uses gradient descent to minimize prediction errors, creating a strong predictive model.</p>
+            </label>
+        </div>
+    </div>
+    <div class="navigation">
+        <a class="nav-button" href="{{ url_for('data') }}">Back</a>
+        <button class="nav-button" type="submit">Next</button>
+    </div>
+</form>
+
+{% endblock %}

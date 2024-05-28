@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Demo Page</h1>
+<p>Welcome to the Demo page. Please select a section to start.</p>
+<ul>
+    <li><a href="{{ url_for('data') }}">Data</a></li>
+    <li><a href="{{ url_for('model') }}">Model</a></li>
+    <li><a href="{{ url_for('parameter') }}">Parameter</a></li>
+    <li><a href="{{ url_for('result') }}">Result</a></li>
+</ul>
+{% endblock %}

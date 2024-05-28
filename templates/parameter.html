@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Parameter Selection</h1>
+<div class="progress-bar-container">
+    <div class="progress-bar" style="width: {{ progress }}%;"></div>
+</div>
+
+<p>Selected Dataset: {{ dataset }}</p>
+<p>Selected Model: {{ model }}</p>
+<form method="POST" id="parameterForm">
+    <div class="parameter-container">
+        <div class="parameter">
+            <label for="test_size">Test Size: <span id="test_size_value">20%</span></label>
+            <input type="range" id="test_size" name="test_size" min="0" max="100" value="20" oninput="updateTestSizeValue(this.value)">
+        </div>
+        <div class="parameter">
+            <label for="random_state">Random State:</label>
+            <input type="text" id="random_state" name="random_state">
+        </div>
+        <div class="parameter">
+            <label for="privileged_groups">Privileged Groups:</label>
+            <select id="privileged_groups" name="privileged_groups">
+                <option value="1">Group 1</option>
+                <option value="2">Group 2</option>
+            </select>
+        </div>
+    </div>
+    <p>Selecting the right parameters for your chosen machine learning model is crucial for optimizing its performance and ensuring fairness. Here, you can adjust various hyperparameters to see how they affect the model's predictions and bias mitigation.</p>
+    <div class="navigation">
+        <a class="nav-button" href="{{ url_for('model') }}">Back</a>
+        <button class="nav-button" type="submit">Next</button>
+    </div>
+</form>
+
+<script>
+    function updateTestSizeValue(value) {
+        document.getElementById('test_size_value').innerText = value + '%';
+    }
+</script>
+
+{% endblock %}
