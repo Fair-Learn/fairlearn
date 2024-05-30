@@ -1,17 +1,27 @@
+![Fairlearn Logo](images/fairlearn.png)
+
 # Fairlearn
 
 Developed by ITU, Fairlearn is an open-source toolkit designed to examine, report, and mitigate discrimination and bias in machine learning models. It leverages leading fairness tools, including AIF360, Themis-ML, and Aequitas, to perform comprehensive bias audits and fairness assessments. Fairlearn enables developers, analysts, and policymakers to make informed decisions by providing performance comparisons and mitigation strategies, ensuring equitable and unbiased AI applications. We invite you to use and contribute to the improvement of Fairlearn.
 
 ## Fairness Tools
 
+![AIF360 Logo](images/aif360.png)
+
 ### AIF360
 A toolkit for measuring and mitigating bias in machine learning models, providing algorithms for fairness pre-processing, in-processing, and post-processing.
+
+![Themis-ML Logo](images/themis.png)
 
 ### Themis-ML
 A library focused on bias detection and mitigation in machine learning models, offering tools to identify and correct biases.
 
+![Aequitas Logo](images/aequitas.png)
+
 ### Aequitas
 A tool for identifying and analyzing bias and fairness in decision-making processes, helping to ensure equitable outcomes across groups.
+
+![RSFair Logo](images/rsfair.png)
 
 ### RSFair
 A tool that uses representative sampling to evaluate and improve the fairness performance of machine learning models by detecting and correcting discriminatory inputs.
