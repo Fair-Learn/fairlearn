@@ -1,4 +1,4 @@
-![Fairlearn Logo](images/fairlearn.png)
+<img src="images/fairlearn.png" alt="Fairlearn Logo" width="400"/>
 
 # Fairlearn
 
