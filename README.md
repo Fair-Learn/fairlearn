@@ -83,25 +83,18 @@ Make sure you have Python 3 installed on your system. You can download it from [
 ## Evaluation Criteria
 
 - **Balanced Accuracy**: The average accuracy obtained on either class.  
-  Formula: \( \text{Balanced Accuracy} = \frac{1}{2} \left( \frac{TP}{TP + FN} + \frac{TN}{TN + FP} \right) \)
 
 - **Theil Index**: Measures inequality in predictions.  
-  Formula: \( \text{Theil Index} = \frac{1}{N} \sum_{i=1}^{N} \left( \frac{p_i}{\bar{p}} \ln \left( \frac{p_i}{\bar{p}} \right) \right) \)
 
 - **Average Odds Difference**: The difference in true positive rates (TPR) and false positive rates (FPR) between groups.  
-  Formula: \( \text{Average Odds Difference} = \frac{1}{2} \left( (\text{TPR}_{\text{unprivileged}} - \text{TPR}_{\text{privileged}}) + (\text{FPR}_{\text{unprivileged}} - \text{FPR}_{\text{privileged}}) \right) \)
 
 - **Equal Opportunity Difference**: The difference in true positive rates between groups.  
-  Formula: \( \text{Equal Opportunity Difference} = \text{TPR}_{\text{unprivileged}} - \text{TPR}_{\text{privileged}} \)
 
 - **Statistical Parity Difference**: The difference in positive outcome rates between groups.  
-  Formula: \( \text{Statistical Parity Difference} = P(\hat{Y} = 1 | D = \text{unprivileged}) - P(\hat{Y} = 1 | D = \text{privileged}) \)
 
 - **Disparate Impact**: The ratio of positive outcome rates between groups.  
-  Formula: \( \text{Disparate Impact} = \frac{P(\hat{Y} = 1 | D = \text{unprivileged})}{P(\hat{Y} = 1 | D = \text{privileged})} \)
 
 - **AUC-ROC**: Area Under the Receiver Operating Characteristic Curve, measuring the model's ability to distinguish between classes.  
-  Formula: \( \text{AUC-ROC} = \int_{0}^{1} \text{TPR}(\text{FPR}) \, d(\text{FPR}) \)
 
 ## License
 
