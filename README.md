@@ -42,19 +42,18 @@ This research focuses on the case of customers' default payments in Taiwan and c
 
 ## Preprocessing Methods
 
-- [ ] Label Flipping (Aequitas)
-- [ ] Disparate Impact Remover (AIF360)
-- [ ] Data Repairer (Aequitas)
-- [ ] Reweighing (AIF360)
-- [ ] Prevalence Sampling (Aequitas)
-- [ ] Relabeller (Themis-ML)
-- [ ] Representative Sampling (RSFair)
-
-- Optimized Preprocessing (AIF360)
-- Learning Fair Representations (AIF360)
-- Correlation Suppression (Aequitas)
-- Feature Importance Suppression (Aequitas)
-- Massaging (Aequitas)
+- [x] Label Flipping (Aequitas)
+- [x] Disparate Impact Remover (AIF360)
+- [x] Data Repairer (Aequitas)
+- [x] Reweighing (AIF360)
+- [x] Prevalence Sampling (Aequitas)
+- [x] Relabeller (Themis-ML)
+- [x] Representative Sampling (RSFair)
+- [ ] Optimized Preprocessing (AIF360)
+- [ ] Learning Fair Representations (AIF360)
+- [ ] Correlation Suppression (Aequitas)
+- [ ] Feature Importance Suppression (Aequitas)
+- [ ] Massaging (Aequitas)
 
 ## In-Processing Methods
 
@@ -68,10 +67,10 @@ To be added soon
 
 ## Models Implemented
 
-- Logistic Regression (LR)
-- Random Forest (RF)
-- Support Vector Machine (SVM)
-- Gradient Boosting Machines (GBM)
+- [x] Logistic Regression (LR)
+- [x] Random Forest (RF)
+- [x] Support Vector Machine (SVM)
+- [x] Gradient Boosting Machines (GBM)
 
 ## Getting Started
 
