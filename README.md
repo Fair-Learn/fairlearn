@@ -6,22 +6,22 @@ Developed by ITU, Fairlearn is an open-source toolkit designed to examine, repor
 
 ## Fairness Tools
 
-![AIF360 Logo](images/aif360.png)
+<img src="images/aif360.png" alt="Fairlearn Logo" width="200"/>
 
 ### AIF360
 A toolkit for measuring and mitigating bias in machine learning models, providing algorithms for fairness pre-processing, in-processing, and post-processing.
 
-![Themis-ML Logo](images/themis.png)
+<img src="images/themis.png" alt="Themis-ML Logo" width="200"/>
 
 ### Themis-ML
 A library focused on bias detection and mitigation in machine learning models, offering tools to identify and correct biases.
 
-![Aequitas Logo](images/aequitas.png)
+<img src="images/aequitas.png" alt="Aequitas Logo" width="200"/>
 
 ### Aequitas
 A tool for identifying and analyzing bias and fairness in decision-making processes, helping to ensure equitable outcomes across groups.
 
-![RSFair Logo](images/rsfair.png)
+<img src="images/rsfair.png" alt="RSFair Logo" width="200"/>
 
 ### RSFair
 A tool that uses representative sampling to evaluate and improve the fairness performance of machine learning models by detecting and correcting discriminatory inputs.
@@ -39,6 +39,32 @@ Predict whether income exceeds $50K/yr based on census data. Also known as the "
 ### Taiwan Credit Default - To be added soon
 This research focuses on the case of customers' default payments in Taiwan and compares the predictive accuracy of the probability of default among six data mining methods.
 [Detail](https://archive.ics.uci.edu/ml/datasets/default+of+credit+card+clients)
+
+## Preprocessing Methods
+
+- [ ] Label Flipping (Aequitas)
+- [ ] Disparate Impact Remover (AIF360)
+- [ ] Data Repairer (Aequitas)
+- [ ] Reweighing (AIF360)
+- [ ] Prevalence Sampling (Aequitas)
+- [ ] Relabeller (Themis-ML)
+- [ ] Representative Sampling (RSFair)
+
+- Optimized Preprocessing (AIF360)
+- Learning Fair Representations (AIF360)
+- Correlation Suppression (Aequitas)
+- Feature Importance Suppression (Aequitas)
+- Massaging (Aequitas)
+
+## In-Processing Methods
+
+To be added soon
+
+## Post-Processing Methods
+
+To be added soon
+
+## Datasets Implemented
 
 ## Models Implemented
 
