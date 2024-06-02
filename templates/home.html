@@ -15,6 +15,36 @@
 <h2>Fairness Tools</h2>
 <p>To help achieve fairness, several tools and techniques have been developed:</p>
 
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="box p-4 text-center">
+                    <img src="../images/aif360.png" alt="Fairlearn Logo" width="200" class="logo mb-4">
+                    <p class="description">A toolkit for measuring and mitigating bias in machine learning models, providing algorithms for fairness pre-processing, in-processing, and post-processing.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="box p-4 text-center">
+                    <img src="../images/themis.png" alt="Themis-ML Logo" class="logo mb-4">
+                    <p class="description">A library focused on bias detection and mitigation in machine learning models, offering tools to identify and correct biases.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="box p-4 text-center">
+                    <img src="../images/aequitas.png" alt="Aequitas Logo" class="logo mb-4">
+                    <p class="description">A tool for identifying and analyzing bias and fairness in decision-making processes, helping to ensure equitable outcomes across groups.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="box p-4 text-center">
+                    <img src="{{ url_for('static', filename='images/rsfair.png') }}" alt="RSFair Logo" class="logo mb-4">
+                    <p class="description">A tool that uses representative sampling to evaluate and improve the fairness performance of machine learning models by detecting and correcting discriminatory inputs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 <h3>Datasets Implemented</h3>
 <ul>
     <li>German Credit</li>
@@ -59,7 +89,8 @@
     <a class="button" href="https://github.com/ITU">Go to project page</a>
 </div>
 
-<h2>About Fairlearn</h2>
-<p>Developed by ITU, Fairlearn is an open-source toolkit designed to examine, report, and mitigate discrimination and bias in machine learning models. It leverages leading fairness tools, including AIF360, Themis-ML, and Aequitas, to perform comprehensive bias audits and fairness assessments. Fairlearn enables developers, analysts, and policymakers to make informed decisions by providing performance comparisons and mitigation strategies, ensuring equitable and unbiased AI applications. We invite you to use and contribute to the improvement of Fairlearn.</p>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 {% endblock %}
