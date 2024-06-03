@@ -194,3 +194,32 @@ nav ul li a {
             height: 100px; /* Make sure all descriptions have the same height */
         }
 
+.evaluation-card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.13);
+            background-color: #ffffff;
+            margin-bottom: 20px;
+        }
+        .evaluation-header {
+            background-color: #000;
+            color: #fff;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .evaluation-body {
+            padding: 20px;
+        }
+        .evaluation-definition, .evaluation-formula {
+            font-weight: bold;
+        }
+        .evaluation-divider {
+            border-top: 1px solid #ccc;
+            margin: 10px 0;
+        }
+        .evaluation-formula-text {
+            text-align: center;
+        }

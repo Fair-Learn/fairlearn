@@ -237,15 +237,97 @@
 
 <h2>Evaluation Criteria</h2>
 <p>To evaluate the fairness and performance of the models, we use the following metrics:</p>
-<ul>
-    <li>Balanced Accuracy: A metric that accounts for class imbalance by taking the average of recall (sensitivity) obtained on each class.</li>
-    <li>Theil Index: An economic measure of inequality that can be applied to predictions in machine learning to measure the disparity in predictive performance across different groups.</li>
-    <li>Average Odds Difference: Measures the difference in both true positive rates (TPR) and false positive rates (FPR) between the privileged and unprivileged groups.</li>
-    <li>Equal Opportunity Difference: Measures the difference in true positive rates (TPR) between the privileged and unprivileged groups.</li>
-    <li>Statistical Parity Difference: Measures the difference in positive outcome rates between the privileged and unprivileged groups.</li>
-    <li>Disparate Impact: Measures the ratio of positive outcome rates between the privileged and unprivileged groups.</li>
-    <li>AUC-ROC: The Area Under the Receiver Operating Characteristic Curve measures the model's ability to distinguish between positive and negative classes.</li>
-</ul>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="evaluation-card">
+                <div class="evaluation-header">Balanced Accuracy</div>
+                <div class="evaluation-body">
+                    <p class="evaluation-definition">Definition:</p>
+                    <p>Balanced Accuracy is a metric that accounts for class imbalance by taking the average of recall (sensitivity) obtained on each class.</p>
+                    <div class="evaluation-divider"></div>
+                    <p class="evaluation-formula">Formula:</p>
+                    <p class="evaluation-formula-text">(1/2) * ((TP / (TP + FN)) + (TN / (TN + FP)))</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="evaluation-card">
+                <div class="evaluation-header">Theil Index</div>
+                <div class="evaluation-body">
+                    <p class="evaluation-definition">Definition:</p>
+                    <p>Theil Index is an economic measure of inequality that can be applied to predictions in machine learning to measure the disparity in predictive performance across different groups.</p>
+                    <div class="evaluation-divider"></div>
+                    <p class="evaluation-formula">Formula:</p>
+                    <p class="evaluation-formula-text">(1/N) * Σ ( (pi / p̄) * ln(pi / p̄) )</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="evaluation-card">
+                <div class="evaluation-header">Average Odds Difference</div>
+                <div class="evaluation-body">
+                    <p class="evaluation-definition">Definition:</p>
+                    <p>Average Odds Difference measures the difference in both true positive rates (TPR) and false positive rates (FPR) between the privileged and unprivileged groups.</p>
+                    <div class="evaluation-divider"></div>
+                    <p class="evaluation-formula">Formula:</p>
+                    <p class="evaluation-formula-text">((TPR_unprivileged - TPR_privileged) + (FPR_unprivileged - FPR_privileged)) / 2</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="evaluation-card">
+                <div class="evaluation-header">Equal Opportunity Difference</div>
+                <div class="evaluation-body">
+                    <p class="evaluation-definition">Definition:</p>
+                    <p>Equal Opportunity Difference measures the difference in true positive rates (TPR) between the privileged and unprivileged groups.</p>
+                    <div class="evaluation-divider"></div>
+                    <p class="evaluation-formula">Formula:</p>
+                    <p class="evaluation-formula-text">TPR_unprivileged - TPR_privileged</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="evaluation-card">
+                <div class="evaluation-header">Statistical Parity Difference</div>
+                <div class="evaluation-body">
+                    <p class="evaluation-definition">Definition:</p>
+                    <p>Statistical Parity Difference measures the difference in positive outcome rates between the privileged and unprivileged groups.</p>
+                    <div class="evaluation-divider"></div>
+                    <p class="evaluation-formula">Formula:</p>
+                    <p class="evaluation-formula-text">P(Y^ = 1 | D = unprivileged) - P(Y^ = 1 | D = privileged)</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="evaluation-card">
+                <div class="evaluation-header">Disparate Impact</div>
+                <div class="evaluation-body">
+                    <p class="evaluation-definition">Definition:</p>
+                    <p>Disparate Impact measures the ratio of positive outcome rates between the privileged and unprivileged groups.</p>
+                    <div class="evaluation-divider"></div>
+                    <p class="evaluation-formula">Formula:</p>
+                    <p class="evaluation-formula-text">P(Y^ = 1 | D = unprivileged) / P(Y^ = 1 | D = privileged)</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="evaluation-card">
+                <div class="evaluation-header">Equal Opportunity Difference</div>
+                <div class="evaluation-body">
+                    <p class="evaluation-definition">Definition:</p>
+                    <p>The Area Under the Receiver Operating Characteristic Curve (AUC-ROC) measures the model's ability to distinguish between positive and negative classes.</p>
+                    <div class="evaluation-divider"></div>
+                    <p class="evaluation-formula">Formula:</p>
+                    <p class="evaluation-formula-text">∫(TPR(FPR)) d(FPR) from 0 to 1</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
 
 <div class="buttons">
     <a class="button" href="https://github.com/Fair-Learn/fairlearn">Go to project page</a>
