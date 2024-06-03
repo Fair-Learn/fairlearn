@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: white; /* Arka plan rengi beyaz olarak ayarlandı */
+    background-color: #FBFBFB; /* Arka plan rengi beyaz olarak ayarlandı */
 }
 
 nav {
@@ -94,3 +94,132 @@ nav ul li a {
 .nav-button:hover {
     background-color: #45a049;
 }
+
+.box {
+    background-color: #ffffff;
+    border-radius: 10px; /* Radius for rounded corners */
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.13); /* Shadow with given parameters */
+    border: 1px solid #ddd; /* Light gray border */
+}
+
+.logo {
+    max-width: 100px;
+}
+
+.description {
+    font-size: 16px;
+    color: #333333;
+}
+
+.start-project-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.13);
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+.info-box {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .info-box img {
+            margin-right: 20px;
+        }
+        .info-box .title {
+            font-weight: bold;
+            color: #000;
+        }
+        .info-box .soon {
+            color: #999;
+        }
+.method-box {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.13);
+            background-color: #ffffff;
+        }
+        .method-box img {
+            margin-right: 20px;
+        }
+        .method-box .title {
+            font-weight: bold;
+            color: #000;
+        }
+        .method-box .soon {
+            color: #999;
+        }
+
+.model-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .model-box {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.13);
+            background-color: #ffffff;
+            width: 23%;
+        }
+        .model-header {
+            background-color: #000;
+            color: #fff;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .model-description {
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100px; /* Make sure all descriptions have the same height */
+        }
+
+.evaluation-card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.13);
+            background-color: #ffffff;
+            margin-bottom: 20px;
+        }
+        .evaluation-header {
+            background-color: #000;
+            color: #fff;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .evaluation-body {
+            padding: 20px;
+        }
+        .evaluation-definition, .evaluation-formula {
+            font-weight: bold;
+        }
+        .evaluation-divider {
+            border-top: 1px solid #ccc;
+            margin: 10px 0;
+        }
+        .evaluation-formula-text {
+            text-align: center;
+        }
