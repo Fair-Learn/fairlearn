@@ -100,7 +100,6 @@ nav ul li a {
     border-radius: 10px; /* Radius for rounded corners */
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.13); /* Shadow with given parameters */
     border: 1px solid #ddd; /* Light gray border */
-    min-height: 400px;
 }
 
 .logo {
@@ -163,5 +162,35 @@ nav ul li a {
             color: #999;
         }
 
-
+.model-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .model-box {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.13);
+            background-color: #ffffff;
+            width: 23%;
+        }
+        .model-header {
+            background-color: #000;
+            color: #fff;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .model-description {
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100px; /* Make sure all descriptions have the same height */
+        }
 

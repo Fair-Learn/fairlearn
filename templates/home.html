@@ -203,20 +203,37 @@
    
     <li style="color: #999;"> <b>In-processing - To be soon:</b> <br>Modifies learning algorithms to incorporate fairness constraints directly during the model training process.</li>
 
-    <li style="color: #999;">> <b>Post-processing - To be soon:</b> <br>Alters model predictions to improve fairness without changing the underlying model or training data.</li>
+    <li style="color: #999;"> <b>Post-processing - To be soon:</b> <br>Alters model predictions to improve fairness without changing the underlying model or training data.</li>
 </ul>
 
 <h3>Models Implemented</h3>
 <p>To explore the impact of fairness methods on model performance, we have implemented four different machine learning models:</p>
-<ul>
-    <li>Logistic Regression (LR)</li>
-    <li>Random Forest (RF)</li>
-    <li>Support Vector Machine (SVM)</li>
-    <li>Gradient Boosting Machines (GBM)</li>
-</ul>
 
-<h2>Architecture Overview</h2>
+<div class="container">
+        <div class="model-container">
+            <div class="model-box">
+                <div class="model-header">Logistic Regression</div>
+                <div class="model-description">Uses a logistic function to predict binary outcomes.</div>
+            </div>
+            <div class="model-box">
+                <div class="model-header">Random Forest</div>
+                <div class="model-description">Constructs an ensemble of decision trees to improve accuracy and reduce overfitting.</div>
+            </div>
+            <div class="model-box">
+                <div class="model-header">Support Vector Machine</div>
+                <div class="model-description">Finds the optimal hyperplane that maximizes the margin between different classes.</div>
+            </div>
+            <div class="model-box">
+                <div class="model-header">Gradient Boosting Machines</div>
+                <div class="model-description">Builds models sequentially to correct the errors made by previous models.</div>
+            </div>
+        </div>
+    </div>
+
+<h2>Flow Chart</h2>
 <p>Fairlearn's architecture is designed to be modular and extensible, integrating multiple fairness tools for comprehensive bias assessment and mitigation.</p>
+
+<img src="{{ url_for('static', filename='images/flow_chart.png') }}" alt="Flow Chart" width="1300">
 
 <h2>Evaluation Criteria</h2>
 <p>To evaluate the fairness and performance of the models, we use the following metrics:</p>
@@ -231,9 +248,10 @@
 </ul>
 
 <div class="buttons">
-    <a class="button" href="{{ url_for('demo') }}">Start Demo</a>
-    <a class="button" href="https://github.com/ITU">Go to project page</a>
+    <a class="button" href="https://github.com/Fair-Learn/fairlearn">Go to project page</a>
 </div>
+
+<a class="btn btn-primary mt-3"" href="{{ url_for('demo') }}">Start Demo</a>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
