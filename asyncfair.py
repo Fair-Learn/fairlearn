@@ -19,8 +19,7 @@ class FairnessAnalyzer:
 
 
 
-
-    async def __init__(self, test_size=0.3, random_state=82, privileged_group="telephone"):
+    def __init__(self, test_size=0.3, random_state=82, privileged_group="telephone"):
         self.test_size = test_size
         self.random_state = random_state
         self.selected_privileged_groups = privileged_group
@@ -50,7 +49,7 @@ class FairnessAnalyzer:
 
 
 
-    def loop(self):
+    async def loop(self):
 
         for clf_name, clf in self.classifiers.items():
             print(f"Processing: {clf_name}")
@@ -91,33 +90,37 @@ class FairnessAnalyzer:
             }
 
         return self.results
-        for name, result in self.results.items():
-            print(f"\n{name}")
-            print(f"Accuracy: {result['accuracy']}")
-            print(f"Balanced Accuracy: {result['balanced_accuracy']}")
-            print(f"AUC-ROC: {result['auc_roc']}")
-            print(f"Classification Report:\n {pd.DataFrame(result['report']).transpose()}")
-            print(f"Disparate Impact: {result['disparate_impact']}")
-            print(f"Statistical Parity Difference: {result['statistical_parity_difference']}")
-            print(f"Equal Opportunity Difference: {result['equal_opportunity_difference']}")
-            print(f"Average Odds Difference: {result['average_odds_difference']}")
-            print(f"Theil Index: {result['theil_index']}")
 
-            plt.figure(figsize=(8, 6))
-            sns.heatmap(result['conf_matrix'], annot=True, fmt="d", cmap="Blues", xticklabels=['Negative', 'Positive'], yticklabels=['Negative', 'Positive'])
-            plt.title(f'Confusion Matrix - {name}')
-            plt.xlabel('Predicted label')
-            plt.ylabel('True label')
-            plt.show()
+        # for name, result in self.results.items():
+        #     print(f"\n{name}")
+        #     print(f"Accuracy: {result['accuracy']}")
+        #     print(f"Balanced Accuracy: {result['balanced_accuracy']}")
+        #     print(f"AUC-ROC: {result['auc_roc']}")
+        #     print(f"Classification Report:\n {pd.DataFrame(result['report']).transpose()}")
+        #     print(f"Disparate Impact: {result['disparate_impact']}")
+        #     print(f"Statistical Parity Difference: {result['statistical_parity_difference']}")
+        #     print(f"Equal Opportunity Difference: {result['equal_opportunity_difference']}")
+        #     print(f"Average Odds Difference: {result['average_odds_difference']}")
+        #     print(f"Theil Index: {result['theil_index']}")
 
-async def main():
-    analyzer = FairnessAnalyzer()
+        #     plt.figure(figsize=(8, 6))
+        #     sns.heatmap(result['conf_matrix'], annot=True, fmt="d", cmap="Blues", xticklabels=['Negative', 'Positive'], yticklabels=['Negative', 'Positive'])
+        #     plt.title(f'Confusion Matrix - {name}')
+        #     plt.xlabel('Predicted label')
+        #     plt.ylabel('True label')
+        #     plt.show()
 
-    await analyzer.loop()
 
-    # analyzer = SecondPart()
 
-    # await analyzer.loops()
 
-if __name__ == "__main__":
-    asyncio.run(main())
+# async def main():
+#     analyzer = FairnessAnalyzer(0.2, 82, "telephone")
+
+#     await analyzer.loop()
+
+#     # analyzer = SecondPart()
+
+#     # await analyzer.loops()
+
+# if __name__ == "__main__":
+#     asyncio.run(main())

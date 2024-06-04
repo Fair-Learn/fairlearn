@@ -2,9 +2,10 @@ from flask import Flask, render_template, redirect, url_for, request, session, s
 import matplotlib.pyplot as plt
 import io
 import base64
-from firstpart import FairnessAnalyzer
+from asyncfair import FairnessAnalyzer
 import pandas as pd
 import seaborn as sns
+import asyncio
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
@@ -51,11 +52,16 @@ def result():
     random_state = session.get('random_state', 'None')
     privileged_groups = session.get('privileged_groups', 'None')
 
-    fair = FairnessAnalyzer(0.2, 82, "telephone")
-    results = fair.loop()
+    async def analyze_fairness():
+        analyzer = FairnessAnalyzer(0.2, 82, "telephone")
+        return await analyzer.loop()
 
-    plotlist = []
-    for name, result in results.items():
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    ress = loop.run_until_complete(analyze_fairness())
+    imglist = []
+
+    for name, result in ress.items():
         print(f"\n{name}")
         print(f"Accuracy: {result['accuracy']}")
         print(f"Balanced Accuracy: {result['balanced_accuracy']}")
@@ -67,17 +73,21 @@ def result():
         print(f"Average Odds Difference: {result['average_odds_difference']}")
         print(f"Theil Index: {result['theil_index']}")
 
+        bimg = io.BytesIO()
         plt.figure(figsize=(8, 6))
         sns.heatmap(result['conf_matrix'], annot=True, fmt="d", cmap="Blues", xticklabels=['Negative', 'Positive'], yticklabels=['Negative', 'Positive'])
         plt.title(f'Confusion Matrix - {name}')
         plt.xlabel('Predicted label')
         plt.ylabel('True label')
-        img = io.BytesIO()
-        plt.savefig(img, format='png')
-        img.seek(0)
-        plot_urli = base64.b64encode(img.getvalue()).decode()
-        plotlist.append(plot_urli)
-        # plt.show()
+        plt.savefig(bimg, format='png')
+        bimg.seek(0)
+        bplot_url = base64.b64encode(bimg.getvalue()).decode()
+        imglist.append(bplot_url)
+
+    print("-------------------------------------")
+
+    # for element in imglist:
+    #     print(element)
 
     # Verilerle grafiği oluşturma
     values = [0.123, 0.258, 0.879]
@@ -93,7 +103,7 @@ def result():
 
 
 
-    return render_template('result.html', progress=100, dataset=selected_dataset, model=selected_model, test_size=test_size, random_state=random_state, privileged_groups=privileged_groups, plot_url=plot_url)
+    return render_template('result.html', progress=100, dataset=selected_dataset, model=selected_model, test_size=test_size, random_state=random_state, privileged_groups=privileged_groups, plot_url=plot_url, imglist=imglist)
 
 @app.route('/team')
 def team():
