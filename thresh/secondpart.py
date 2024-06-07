@@ -14,44 +14,30 @@ from aif360.metrics import ClassificationMetric
 from themis_ml.datasets import german_credit, census_income
 import asyncio
 
-class FairnessAnalyzer:
+class FairnessAnalyzerr:
     def __init__(self, test_size=0.3, random_state=82, privileged_group="telephone"):
         self.test_size = test_size
         self.random_state = random_state
         self.privileged_group = privileged_group
-        self.german_credit_df = None
-        self.census_income_df = None
-        self.labels = None
-        self.features = None
-        self.protected_attribute = None
-        self.results = {}
-
-    async def load_data(self):
         self.german_credit_df = german_credit(raw=True)
         self.census_income_df = census_income(raw=True)
-
-    async def prepare_data(self):
         self.labels = pd.Series(self.german_credit_df['credit_risk'].values)
         self.features = pd.get_dummies(self.german_credit_df.drop('credit_risk', axis=1))
-
-        # Ensure all boolean columns are converted to integers
         for col in self.features.columns:
             if self.features[col].dtype == 'bool':
                 self.features[col] = self.features[col].astype(int)
-
         self.protected_attribute = pd.Series(self.german_credit_df[self.privileged_group].values, dtype=int)
+        self.scaler = StandardScaler()
+        self.X_train, self.X_test, self.y_train, self.y_test, self.s_train, self.s_test = train_test_split(self.features, self.labels, self.protected_attribute, test_size=self.test_size, random_state=self.random_state)
+        self.X_train_scaled = self.scaler.fit_transform(self.X_train)
+        self.X_test_scaled = self.scaler.transform(self.X_test)
+        self.results = {}
 
-    async def split_data(self):
-        X_train, X_test, y_train, y_test, s_train, s_test = train_test_split(
-            self.features, self.labels, self.protected_attribute, 
-            test_size=self.test_size, random_state=self.random_state)
-        return X_train, X_test, y_train, y_test, s_train, s_test
+    
 
-    async def standardize_data(self, X_train, X_test):
-        scaler = StandardScaler()
-        X_train_scaled = scaler.fit_transform(X_train)
-        X_test_scaled = scaler.transform(X_test)
-        return X_train_scaled, X_test_scaled
+
+
+
 
     async def train_and_evaluate(self, X_train_scaled, X_test_scaled, y_train, y_test, s_test):
         classifiers = {
@@ -99,11 +85,7 @@ class FairnessAnalyzer:
             }
 
     async def run_analysis(self):
-        await self.load_data()
-        await self.prepare_data()
-        X_train, X_test, y_train, y_test, s_train, s_test = await self.split_data()
-        X_train_scaled, X_test_scaled = await self.standardize_data(X_train, X_test)
-        await self.train_and_evaluate(X_train_scaled, X_test_scaled, y_train, y_test, s_test)
+        await self.train_and_evaluate(self.X_train_scaled, self.X_test_scaled, self.y_train, self.y_test, self.s_test)
 
     def display_results(self):
         for name, result in self.results.items():
@@ -127,6 +109,6 @@ class FairnessAnalyzer:
 
 # Usage example
 if __name__ == "__main__":
-    analyzer = FairnessAnalyzer()
+    analyzer = FairnessAnalyzerr()
     asyncio.run(analyzer.run_analysis())
     analyzer.display_results()

@@ -6,6 +6,7 @@ from asyncfair import FairnessAnalyzer
 import pandas as pd
 import seaborn as sns
 import asyncio
+from controller.controller import Controller
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
@@ -53,8 +54,9 @@ def result():
     privileged_groups = session.get('privileged_groups', 'None')
 
     async def analyze_fairness():
-        analyzer = FairnessAnalyzer(0.2, 82, "telephone")
-        return await analyzer.loop()
+        controller = Controller()
+        await controller.third_part()
+        return await controller.first_part()
 
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)

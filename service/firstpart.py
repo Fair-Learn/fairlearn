@@ -15,12 +15,11 @@ from aif360.metrics import ClassificationMetric
 import asyncio
 
 
-class FairnessAnalyzer:
+class FirstPart:
 
 
 
-
-    async def __init__(self, test_size=0.3, random_state=82, privileged_group="telephone"):
+    def __init__(self, test_size=0.3, random_state=82, privileged_group="telephone"):
         self.test_size = test_size
         self.random_state = random_state
         self.selected_privileged_groups = privileged_group
@@ -50,7 +49,7 @@ class FairnessAnalyzer:
 
 
 
-    def loop(self):
+    async def loop(self):
 
         for clf_name, clf in self.classifiers.items():
             print(f"Processing: {clf_name}")
@@ -91,6 +90,7 @@ class FairnessAnalyzer:
             }
 
         return self.results
+
         for name, result in self.results.items():
             print(f"\n{name}")
             print(f"Accuracy: {result['accuracy']}")
@@ -110,14 +110,17 @@ class FairnessAnalyzer:
             plt.ylabel('True label')
             plt.show()
 
+
+
+
 async def main():
-    analyzer = FairnessAnalyzer()
+    analyzer = FirstPart(0.2, 82, "telephone")
 
     await analyzer.loop()
 
-    # analyzer = SecondPart()
+#     # analyzer = SecondPart()
 
-    # await analyzer.loops()
+#     # await analyzer.loops()
 
 if __name__ == "__main__":
     asyncio.run(main())
