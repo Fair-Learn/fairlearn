@@ -14,8 +14,15 @@
 
 
 
-<h1>Confusion Matrices</h1>
+<h1>First Part Confusion Matrices</h1>
     {% for img in imglist %}
+        <div>
+            <img src="data:image/png;base64,{{ img }}" alt="Confusion Matrix">
+        </div>
+    {% endfor %}
+
+<h1>Second Part Confusion Matrices</h1>
+    {% for img in imglist2 %}
         <div>
             <img src="data:image/png;base64,{{ img }}" alt="Confusion Matrix">
         </div>

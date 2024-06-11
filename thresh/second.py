@@ -9,9 +9,9 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.preprocessing import StandardScaler
-# from aequitas.flow.methods.preprocessing.label_flipping import LabelFlipping
-# from aequitas.flow.methods.preprocessing.data_repairer import DataRepairer
-# from aequitas.flow.methods.preprocessing.prevalence_sample import PrevalenceSampling
+from aequitas.flow.methods.preprocessing.label_flipping import LabelFlipping
+from aequitas.flow.methods.preprocessing.data_repairer import DataRepairer
+from aequitas.flow.methods.preprocessing.prevalence_sample import PrevalenceSampling
 from aif360.datasets import BinaryLabelDataset
 from aif360.metrics import ClassificationMetric
 from themis_ml.preprocessing.relabelling import Relabeller
@@ -72,9 +72,9 @@ def run_relabeller(X_train, y_train, s_train):
     return X_train, y_train_transformed
 
 methods = {
-    # "Label Flipping": run_label_flipping,
-    # "Data Repairer": run_data_repairer,
-    # "Prevalence Sampling": run_prevalence_sampling,
+    "Label Flipping": run_label_flipping,
+    "Data Repairer": run_data_repairer,
+    "Prevalence Sampling": run_prevalence_sampling,
     "Relabeller": run_relabeller
 }
 

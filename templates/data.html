@@ -2,14 +2,14 @@
 
 {% block content %}
 <h1>Data Page</h1>
-<div class="progress-bar-container">
-    <div class="progress-bar" style="width: {{ progress }}%;"></div>
+<div class="progress-container">
+    <div class="progress-fill" style="width: {{ progress }}%;"></div>
 </div>
 
 <h2>Choose sample data set</h2>
 <form method="POST" id="datasetForm">
-    <div class="dataset-container">
-        <div class="dataset">
+    <div class="sample-data-container">
+        <div class="sample-data-item">
             <input type="radio" id="german_credit" name="dataset" value="German Credit">
             <label for="german_credit">
                 <h3>German Credit</h3>
@@ -24,7 +24,7 @@
                 </ul>
             </label>
         </div>
-        <div class="dataset">
+        <div class="sample-data-item">
             <input type="radio" id="adult_census" name="dataset" value="Adult Census" disabled>
             <label for="adult_census">
                 <h3>Adult Census - To be soon</h3>
@@ -39,7 +39,7 @@
                 </ul>
             </label>
         </div>
-        <div class="dataset">
+        <div class="sample-data-item">
             <input type="radio" id="taiwan_credit" name="dataset" value="Taiwan Credit Default" disabled>
             <label for="taiwan_credit">
                 <h3>Taiwan Credit Default - To be soon</h3>

@@ -1,0 +1,48 @@
+.parameter_title {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.parameter_text {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.parameter_container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.parameter_item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.parameter_label {
+    width: 25%;
+    text-align: left;
+}
+
+.parameter_value {
+    font-weight: bold;
+}
+
+.parameter_input,
+.parameter_select {
+    padding: 20px;
+    font-size: 1em;
+    width: 30%;
+    margin-left: 10px;
+}
+
+.parameter_input {
+    align-self: flex-start;
+}
+
+.parameter_description {
+    font-size: 1em;
+    margin-bottom: 20px;
+}

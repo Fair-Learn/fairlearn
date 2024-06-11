@@ -58,11 +58,14 @@ def result():
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
     imglist = loop.run_until_complete(controller.first_part_results_tables())
+    imglist2 = loop.run_until_complete(controller.second_part_results_tables())
+    # imglist2 = []
 
 
 
 
-    return render_template('result.html', progress=100, dataset=selected_dataset, model=selected_model, test_size=test_size, random_state=random_state, privileged_groups=privileged_groups, imglist=imglist)
+
+    return render_template('result.html', progress=100, dataset=selected_dataset, model=selected_model, test_size=test_size, random_state=random_state, privileged_groups=privileged_groups, imglist=imglist, imglist2=imglist2)
 
 @app.route('/team')
 def team():

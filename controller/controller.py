@@ -10,7 +10,7 @@ import base64
 
 
 from service.firstpart import FirstPart
-# from service.secondPart import SecondPart
+from service.secondpart import SecondPart
 from service.thirdpart import ThirdPart
 
 
@@ -27,6 +27,10 @@ class Controller:
         analyzer = FirstPart(test_size, random_state, privileged_group)
         return await analyzer.loop()
 
+    async def second_part(self, test_size=0.3, random_state=82, privileged_group="telephone"):
+        analyzer = SecondPart(test_size, random_state, privileged_group)
+        return await analyzer.run_all_methods()
+
     async def third_part(self, test_size=0.3, random_state=82, privileged_group="telephone"):
         analyzer = ThirdPart(test_size, random_state, privileged_group)
         await analyzer.run_experiment()
@@ -38,6 +42,23 @@ class Controller:
         for name, result in result.items():
             bimg = io.BytesIO()
             plt.figure(figsize=(8, 6))
+            sns.heatmap(result['conf_matrix'], annot=True, fmt="d", cmap="Blues", xticklabels=['Negative', 'Positive'], yticklabels=['Negative', 'Positive'])
+            plt.title(f'Confusion Matrix - {name}')
+            plt.xlabel('Predicted label')
+            plt.ylabel('True label')
+            plt.savefig(bimg, format='png')
+            bimg.seek(0)
+            bplot_url = base64.b64encode(bimg.getvalue()).decode()
+            imglist.append(bplot_url)
+        
+        return imglist
+
+    async def second_part_results_tables(self, test_size=0.3, random_state=82, privileged_group="telephone"):
+        result = await self.second_part(test_size, random_state, privileged_group)
+        imglist = []
+        for name, result in result.items():
+            bimg = io.BytesIO()
+            plt.figure(figsize=(4, 3))
             sns.heatmap(result['conf_matrix'], annot=True, fmt="d", cmap="Blues", xticklabels=['Negative', 'Positive'], yticklabels=['Negative', 'Positive'])
             plt.title(f'Confusion Matrix - {name}')
             plt.xlabel('Predicted label')

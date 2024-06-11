@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FBFBFB;
+}
+
+.progress-container {
+    position: relative;
+    height: 30px;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #4caf50;
+}
+
+.sample-data-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sample-data-item {
+    /* background-color: #ffffff; */
+    border: none;
+    /* border-radius: 10px; */
+    /* box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.13); */
+    padding: 20px;
+    position: relative;
+    padding-left: 40px; /* Radyo düğmesi için yer açar */
+}
+
+.sample-data-item input[type="radio"] {
+    position: absolute;
+    top: 20px; /* Yukarıdan boşluk */
+    left: 20px; /* Soldan boşluk */
+}
+
+.sample-data-item label {
+    cursor: pointer;
+    display: block;
+    margin-left: 40px; /* Radyo düğmesi ile içeriğin arasındaki boşluk */
+}
+
+.sample-data-item h3 {
+    margin-top: 0;
+}
+
+.sample-data-item ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Sütunlar arası boşluk */
+    list-style: none; /* Noktaları kaldır */
+    padding: 0;
+    margin: 10px 0 0 0; /* Üstteki boşluk */
+}
+
+.sample-data-item ul li {
+    flex: 1 1 30%; /* 3 sütun oluşturur */
+}
+
+
+
+.button-nav {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.button-nav:hover {
+    background-color: #45a049;
+}

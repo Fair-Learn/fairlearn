@@ -1,0 +1,43 @@
+.model_progress-bar-container {
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 25px;
+    margin-bottom: 20px;
+}
+
+.model_progress-bar {
+    height: 20px;
+    background-color: #4caf50;
+    border-radius: 25px;
+}
+
+.model_model-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.model_model {
+    border: none;
+    /* border-radius: 10px; */
+    /* box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.13); */
+    padding: 20px;
+    position: relative;
+    padding-left: 40px; /* Radyo düğmesi için yer açar */
+}
+
+.model_radio-input {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.model_label {
+    margin-left: 30px; /* Ensure the label content doesn't overlap the radio button */
+}
+
+.model_model h3 {
+    margin-top: 0;
+}
+
+

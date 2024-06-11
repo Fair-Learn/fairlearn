@@ -19,7 +19,7 @@ from themis_ml.preprocessing.relabelling import Relabeller
 from themis_ml.datasets import german_credit, census_income
 
 
-class SecondPart:
+class FairnessComparison:
     def __init__(self, test_size=0.3, random_state=82, privileged_group="telephone"):
         self.test_size = test_size
         self.random_state = random_state
@@ -150,10 +150,6 @@ class SecondPart:
         for task_results in all_results:
             results.update(task_results)
 
-
-        return results
-
-
         # Comparison of all methods
         for name, result in results.items():
             print(f"\n{name}")
@@ -175,6 +171,6 @@ class SecondPart:
             plt.show()
 
 # Example usage
-# if __name__ == "__main__":
-#     comparison = SecondPart(test_size=0.3, random_state=82, privileged_group="telephone")
-#     asyncio.run(comparison.run_all_methods())
+if __name__ == "__main__":
+    comparison = FairnessComparison(test_size=0.3, random_state=82, privileged_group="telephone")
+    asyncio.run(comparison.run_all_methods())
