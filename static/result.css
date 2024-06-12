@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.result_container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.result_report {
+    margin-right: 20px;
+}
+
+.result_classification-report {
+    width: auto;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.result_classification-report th, .result_classification-report td {
+    padding: 8px 12px;
+}
+
+.result_classification-report th {
+    /* background-color: #f2f2f2; */
+}
+
+.result_classification-report .header {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.result_images {
+    display: flex;
+    flex-direction: row;
+}
+
+.result_images img {
+    max-width: 50%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.result_values {
+    margin-top: 20px;
+}
+
+.result_value-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.result_header {
+    margin-top: 50px; /* Boşluğun boyutunu burada ayarlayabilirsiniz */
+    text-align: center; /* Metni ortalama */
+    width: 100%; /* Elemanın genişliği sayfa genişliği kadar */
+}
+
+.result_radar {
+    margin-top: 50px; /* Boşluğun boyutunu burada ayarlayabilirsiniz */
+    text-align: center; /* Metni ortalama */
+    width: 100%; /* Elemanın genişliği sayfa genişliği kadar */
+}
+
+.result_chart {
+    flex: 0 0 auto;
+    margin-left: auto;
+}
+.result_chart img {
+    max-width: 100%;
+    height: auto;
+}

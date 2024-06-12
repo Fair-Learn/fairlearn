@@ -92,9 +92,9 @@ class ThirdPart:
 
             models = {
                 "Logistic Regression": LogisticRegression(max_iter=2000, random_state=self.random_state),
-                "Support Vector Machine": SVC(probability=True, random_state=self.random_state),
+                "SVC": SVC(probability=True, random_state=self.random_state),
                 "Random Forest": RandomForestClassifier(random_state=self.random_state),
-                "Gradient Boosting Machines": XGBClassifier(random_state=self.random_state)
+                "XGBClassifier": XGBClassifier(random_state=self.random_state)
             }
 
             for model_name, model in models.items():
@@ -141,6 +141,10 @@ class ThirdPart:
         await self.load_data()
         self.prepare_data()
         await self.train_and_evaluate()
+        return self.results
+
+    def resultpart(self):
+        return self.results
 
     def display_results(self):
         for name, result in self.results.items():

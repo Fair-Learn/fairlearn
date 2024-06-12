@@ -13,24 +13,98 @@
 <p>Privileged Groups: {{ privileged_groups }}</p>
 
 
-
-<h1>First Part Confusion Matrices</h1>
-    {% for img in imglist %}
-        <div>
-            <img src="data:image/png;base64,{{ img }}" alt="Confusion Matrix">
-        </div>
-    {% endfor %}
-
-<h1>Second Part Confusion Matrices</h1>
-    {% for img in imglist2 %}
-        <div>
-            <img src="data:image/png;base64,{{ img }}" alt="Confusion Matrix">
-        </div>
-    {% endfor %}
-  
-
-<div class="navigation">
-    <a class="nav-button" href="{{ url_for('parameter') }}">Back</a>
+<h1 class="result_header">Relabeller</h1>
+<div class="result_container">
+    <div class="result_report">
+        <p><strong>Accuracy:</strong> {{allresults['Relabeller']['accuracy'] | round(2)}}</p>
+        {{ relabeller_report_html|safe }}
+    </div>
+    <div class="result_images">
+        <img src="data:image/png;base64,{{ modelimg }}" alt="Confusion Matrix">
+        <img src="data:image/png;base64,{{ allresults['Relabellerchart'] }}" alt="Confusion Matrix">
+    </div>
 </div>
+
+<div class="result_container">
+    <div class="result_values">
+        <div class="result_value-item"><strong>Disparate Impact : </strong> {{allresults['Relabeller']['disparate_impact'] | round(2)}}</div>
+        <div class="result_value-item"><strong>Statistical Parity Difference : </strong> {{allresults['Relabeller']['statistical_parity_difference'] | round(2)}}</div>
+        <div class="result_value-item"><strong>Equal Opportunity Difference : </strong> {{allresults['Relabeller']['equal_opportunity_difference'] | round(2)}}</div>
+        <div class="result_value-item"><strong>Average Odds Difference : </strong> {{allresults['Relabeller']['average_odds_difference'] | round(2)}}</div>
+        <div class="result_value-item"><strong>Theil Index : </strong> {{allresults['Relabeller']['theil_index'] | round(2)}}</div>
+        <div class="result_value-item"><strong>AUC-ROC : </strong> {{allresults['Relabeller']['auc_roc'] | round(2)}}</div>
+        <div class="result_value-item"><strong>Balanced Accuracy : </strong> {{allresults['Relabeller']['balanced_accuracy'] | round(2)}}</div>
+    </div>
+    <div class="result_chart">
+        <img src="data:image/png;base64,{{ allresults['RelabellerChart'] }}" alt="Confusion Matrix">
+    </div>
+</div>
+
+<h1 class="result_header">Disparate Impact Remover</h1>
+<div class="result_container">
+    <div class="result_report">
+        <p><strong>Accuracy:</strong> {{allresults['Disparate Impact Remover']['accuracy'] | round(2)}}</p>
+        {{ dir_report_html|safe }}
+    </div>
+    <div class="result_images">
+        <img src="data:image/png;base64,{{ modelimg }}" alt="Confusion Matrix">
+        <img src="data:image/png;base64,{{ allresults['Disparate Impact Removerchart'] }}" alt="Confusion Matrix">
+    </div>
+</div>
+
+<div class="result_container">
+    <div class="result_values">
+        <div class="result_value-item"><strong>Disparate Impact : </strong> {{allresults['Disparate Impact Remover']['disparate_impact'] | round(2)}}</div>
+        <div class="result_value-item"><strong>Statistical Parity Difference : </strong> {{allresults['Disparate Impact Remover']['statistical_parity_difference'] | round(2)}}</div>
+        <div class="result_value-item"><strong>Equal Opportunity Difference : </strong> {{allresults['Disparate Impact Remover']['equal_opportunity_difference'] | round(2)}}</div>
+        <div class="result_value-item"><strong>Average Odds Difference : </strong> {{allresults['Disparate Impact Remover']['average_odds_difference'] | round(2)}}</div>
+        <div class="result_value-item"><strong>Theil Index : </strong> {{allresults['Disparate Impact Remover']['theil_index'] | round(2)}}</div>
+        <div class="result_value-item"><strong>AUC-ROC : </strong> {{allresults['Disparate Impact Remover']['auc_roc'] | round(2)}}</div>
+        <div class="result_value-item"><strong>Balanced Accuracy : </strong> {{allresults['Disparate Impact Remover']['balanced_accuracy'] | round(2)}}</div>
+    </div>
+    <div class="result_chart">
+        <img src="data:image/png;base64,{{ allresults['DIRChart'] }}" alt="Confusion Matrix">
+    </div>
+</div>
+
+<h1 class="result_header">Reweighing</h1>
+<div class="result_container">
+    <div class="result_report">
+        <p><strong>Accuracy:</strong> {{allresults['Reweighing']['accuracy'] | round(2)}}</p>
+        {{ reweighing_report_html|safe }}
+    </div>
+    <div class="result_images">
+        <img src="data:image/png;base64,{{ modelimg }}" alt="Confusion Matrix">
+        <img src="data:image/png;base64,{{ allresults['Reweighingchart'] }}" alt="Confusion Matrix">
+    </div>
+</div>
+
+<div class="result_container">
+    <div class="result_values">
+        <div class="result_value-item"><strong>Disparate Impact : </strong> {{allresults['Reweighing']['disparate_impact'] | round(2)}}</div>
+        <div class="result_value-item"><strong>Statistical Parity Difference : </strong> {{allresults['Reweighing']['statistical_parity_difference'] | round(2)}}</div>
+        <div class="result_value-item"><strong>Equal Opportunity Difference : </strong> {{allresults['Reweighing']['equal_opportunity_difference'] | round(2)}}</div>
+        <div class="result_value-item"><strong>Average Odds Difference : </strong> {{allresults['Reweighing']['average_odds_difference'] | round(2)}}</div>
+        <div class="result_value-item"><strong>Theil Index : </strong> {{allresults['Reweighing']['theil_index'] | round(2)}}</div>
+        <div class="result_value-item"><strong>AUC-ROC : </strong> {{allresults['Reweighing']['auc_roc'] | round(2)}}</div>
+        <div class="result_value-item"><strong>Balanced Accuracy : </strong> {{allresults['Reweighing']['balanced_accuracy'] | round(2)}}</div>
+    </div>
+    <div class="result_chart">
+        <img src="data:image/png;base64,{{ allresults['ReweighingChart'] }}" alt="Confusion Matrix">
+    </div>
+</div>
+
+
+<div class="result_radar">
+    <img src="data:image/png;base64,{{ radar }}" alt="Radar Chart">
+</div>
+
+<!-- <h1>First Part Confusion Matrices</h1>
+
+
+
+
+
+
 
 {% endblock %}
